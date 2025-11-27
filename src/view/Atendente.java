@@ -2,6 +2,8 @@ package view;
 
 import java.util.Scanner;
 import model.Fruta;
+import model.Verdura;
+import model.Produto;
 
 public class Atendente {
 
@@ -14,10 +16,8 @@ public class Atendente {
 	public int menuPrincipal() {
 		System.out.println("\n=============< App Frutaria >=============");
 		System.out.println("| 1 - Cadastrar uma fruta                |");
-		System.out.println("| 2 - Listar frutas                      |");
-		System.out.println("| 3 - Remover fruta                      |");
-		System.out.println("| 4 - Buscar fruta                       |");
-		System.out.println("| 5 - Quantidade de frutas registradas   |");
+		System.out.println("| 2 - Cadastrar uma verdura              |");
+		System.out.println("| 3 - Listar quantidade total em estoque |");
 		System.out.println("| 0 - Sair do programa                   |");
 		System.out.println("==========================================");
 		System.out.print("Digite uma opção: ");
@@ -25,6 +25,38 @@ public class Atendente {
 		leia.nextLine();
 		return opcao;
 	}
+	
+	public int menuPrincipalFrutas() {
+		System.out.println("\n================< Frutas >================");
+		System.out.println("| 1 - Cadastrar uma fruta                |");
+		System.out.println("| 2 - Listar frutas                      |");
+		System.out.println("| 3 - Remover fruta                      |");
+		System.out.println("| 4 - Buscar fruta                       |");
+		System.out.println("| 5 - Quantidade de frutas registradas   |");
+		System.out.println("| 0 - Voltar ao menu principal           |");
+		System.out.println("==========================================");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+	
+	public int menuPrincipalVerduras() {
+		System.out.println("\n===============< Verduras >===============");
+		System.out.println("| 1 - Cadastrar uma verdura              |");
+		System.out.println("| 2 - Listar verduras                    |");
+		System.out.println("| 3 - Remover verdura                    |");
+		System.out.println("| 4 - Buscar verdura                     |");
+		System.out.println("| 5 - Quantidade de verduras registradas |");
+		System.out.println("| 0 - Voltar ao menu principal           |");
+		System.out.println("==========================================");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+
+	// FRUTAS
 
 	public String frutaNome() {
 		System.out.print("Digite o nome da fruta: ");
@@ -40,21 +72,20 @@ public class Atendente {
 		System.out.print("Digite a quantidade: ");
 		return leia.nextInt();
 	}
-
-	public String frutaTipo() {
-		leia.nextLine();
-		System.out.print("Digite o tipo da fruta: ");
-		return leia.nextLine();
+	
+	public double frutaPeso() {
+		System.out.print("Digite o peso da fruta: ");
+		return leia.nextDouble();
 	}
-
-	public void visualizar(Fruta fruta) {
+	
+	public void visualizarFruta(Fruta fruta) {
 		System.out.println("---");
 		System.out.println("Nome: " + fruta.getNome());
 		System.out.println("Preco: " + fruta.getPreco());
 		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Tipo: " + fruta.getTipo());
+		System.out.println("Peso: " + fruta.getPeso());
 	}
-
+	
 	public String frutaRemover() {
 		System.out.print("Digite o nome da fruta que deseja remover: ");
 		return leia.nextLine();
@@ -74,22 +105,131 @@ public class Atendente {
 		System.out.println("Nome: " + fruta.getNome());
 		System.out.println("Preco: R$ " + fruta.getPreco());
 		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Tipo: " + fruta.getTipo());
+		System.out.println("Peso: " + fruta.getPeso());
 	}
 
 	public static void visualizarQuantidadeFrutas() {
 
-		if (Fruta.getContador() == 0) {
-			System.out.println("Existe " + Fruta.getContador() + " frutas registradas no sistema! Sistema vazio!");
-		} else if (Fruta.getContador() == 1) {
-			System.out.println("Existe " + Fruta.getContador() + " fruta registrada no sistema!");
+		if (Fruta.getContadorFruta() == 0) {
+			System.out.println("Existe " + Fruta.getContadorFruta() + " frutas registradas no sistema! Sistema vazio!");
+		} else if (Fruta.getContadorFruta() == 1) {
+			System.out.println("Existe " + Fruta.getContadorFruta() + " fruta registrada no sistema!");
 		} else {
-			System.out.println("\nExistem " + Fruta.getContador() + " frutas diferentes registradas no sistema!");
+			System.out.println("\nExistem " + Fruta.getContadorFruta() + " frutas diferentes registradas no sistema!");
 		}
 	}
 
-	public void mensagemNaoEncontrado() {
+	public void mensagemNaoEncontradoFruta() {
 		System.out.println("Fruta não encontrada!!!");
+	}
+	
+	// VERDURAS
+
+	public String verduraNome() {
+		System.out.print("Digite o nome da verdura: ");
+		return leia.nextLine();
+	}
+	
+	public double verduraPreco() {
+		System.out.print("Digite um preco para a verdura: ");
+		return leia.nextDouble();
+	}
+	
+	public int verduraQuantidade() {
+		System.out.print("Digite a quantidade: ");
+		return leia.nextInt();
+	}
+	
+	public String verduraTipo() {
+		System.out.print("Digite o tipo da verdura: ");
+		return leia.nextLine();
+	}
+	
+	public void visualizarVerdura(Verdura verdura) {
+		System.out.println("---");
+		System.out.println("Nome: " + verdura.getNome());
+		System.out.println("Preco: " + verdura.getPreco());
+		System.out.println("Quantidade: " + verdura.getQuantidade());
+		System.out.println("Tipo: " + verdura.getTipo());
+	}
+	
+	public String verduraRemover() {
+		System.out.print("Digite o nome da verdura que deseja remover: ");
+		return leia.nextLine();
+	}
+	
+	public void visualizarVerduraRemovida(String nome) {
+		System.out.println("A verdura '" + nome + "' foi removida.");
+	}
+	
+	public String verduraBuscar() {
+		System.out.print("Digite o nome da verdura que deseja encontrar: ");
+		return leia.nextLine();
+	}
+	
+	public void visualizarVerduraBuscada(String modeloBusca, Verdura verdura) {
+		System.out.println("\nResultado da sua pesquisa: '" + modeloBusca + "': ");
+		System.out.println("Nome: " + verdura.getNome());
+		System.out.println("Preco: R$ " + verdura.getPreco());
+		System.out.println("Quantidade: " + verdura.getQuantidade());
+		System.out.println("Tipo: " + verdura.getTipo());
+	}
+	
+	public static void visualizarQuantidadeVerduras() {
+		
+		if (Verdura.getContadorVerdura() == 0) {
+			System.out.println("Existe " + Verdura.getContadorVerdura() + " verduras registradas no sistema! Sistema vazio!");
+		} else if (Verdura.getContadorVerdura() == 1) {
+			System.out.println("Existe " + Verdura.getContadorVerdura() + " verdura registrada no sistema!");
+		} else {
+			System.out.println("\nExistem " + Verdura.getContadorVerdura() + " verduras diferentes registradas no sistema!");
+		}
+	}
+	
+public static void visualizarQuantidade() {
+		
+		if (Produto.getContador() == 0) {
+			System.out.println("Existe " + Produto.getContador() + " produtos registradas no sistema! Sistema vazio!");
+		} else if (Produto.getContador() == 1) {
+			System.out.println("Existe " + Produto.getContador() + " produtos registrada no sistema!");
+		} else {
+			System.out.println("\nExistem " + Produto.getContador() + " produtos diferentes registrados no sistema!");
+		}
+	}
+	
+	public void creditos() {
+			System.out.println("\n=====================| Créditos |========================");
+			System.out.println("|                                                       |");
+			System.out.println("|    Código desenvolvido por Nathan Batista da Silva    |");
+			System.out.println("|                                                       |");
+			System.out.println("|       Feito usando o material desenvolvido por:       |");
+			System.out.println("|                 Bruno da Silva Andrade                |");
+			System.out.println("|                                                       |");
+			System.out.println("|                 Agradecimentos finais                 |");
+			System.out.println("|                 ---------------------                 |");
+			System.out.println("|         A Deus, pois a ele sempre serei grato         |");
+			System.out.println("|         Aos meus colegas de classe pela ajuda         |");
+			System.out.println("|         Ao meu pai e minha mãe pelo incentivo         |");
+			System.out.println("|      À Kamili pelo suporte e os primeiros testes      |");
+			System.out.println("|                                                       |");
+			System.out.println("|     E a você, pessoa que está usando este código!     |");
+			System.out.println("|                 ---------------------                 |");
+			System.out.println("|                                                       |");
+			System.out.println("|               My GitHub: nathansilva150               |");
+			System.out.println("|                                                       |");
+			System.out.println("|                    Até a próxima!!                    |");
+			System.out.println("|                                                       |");
+			System.out.println("=========================================================");
+			System.out.println("\nVoltando ao menu...\n");
+		
+	}
+
+	public void mensagemNaoEncontradoVerdura() {
+		System.out.println("Verdura não encontrada!!!");
+	}
+	
+	public void limparScanner() {
+		leia.nextLine();
 	}
 
 	public void finalizarApp() {

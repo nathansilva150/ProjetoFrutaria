@@ -1,68 +1,36 @@
 package model;
 
-public class Fruta {
+public class Fruta extends Produto {
 
-	private String nome;
-	private double preco;
-	private int quantidade;
-	private String tipo;
-	private static int contador = 0;
+	private double peso;
+	private static int contadorFruta;
 
 	public Fruta() {
-		this.nome = " ";
-		this.preco = 0.0;
-		this.quantidade = 0;
-		this.tipo = " ";
-		Fruta.setContador(Fruta.getContador() + 1);
+		super();
+		this.peso = 0;
+		Fruta.contadorFruta++;
 	}
 
-	public Fruta(String nome, double preco, int quantidade, String tipo) {
-		this.nome = nome;
-		this.preco = preco;
-		this.quantidade = quantidade;
-		this.tipo = tipo;
-		Fruta.setContador(Fruta.getContador() + 1);
-
+	public Fruta(String nome, double preco, int quantidade, double peso) {
+		super(nome, preco, quantidade);
+		this.peso = peso;
+		Fruta.contadorFruta++;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	public double getPeso() {
+		return peso;
 	}
 
-	public double getPreco() {
-		return preco;
+	public static int getContadorFruta() {
+		return contadorFruta;
 	}
 
-	public int getQuantidade() {
-		return quantidade;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public static int getContador() {
-		return contador;
-	}
-
-	public static void setContador(int contador) {
-		Fruta.contador = contador;
+	public static void setContadorFruta(int contadorFruta) {
+		Fruta.contadorFruta = contadorFruta;
 	}
 
 }
