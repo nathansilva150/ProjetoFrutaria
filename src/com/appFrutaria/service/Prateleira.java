@@ -21,7 +21,7 @@ public class Prateleira {
 		switch (opcao) {
 		case 1 -> {
 			int opcaoFruta = 1;
-			
+
 			do {
 				opcaoFruta = atendente.menuPrincipalFrutas();
 
@@ -36,7 +36,6 @@ public class Prateleira {
 					Fruta frutas = new Fruta(nome, preco, quantidade, peso);
 					listaFruta.add(frutas);
 					System.out.println("\nFruta registrada no sistema!\n");
-
 				}
 
 				case 2 -> {
@@ -44,6 +43,7 @@ public class Prateleira {
 						atendente.visualizarFruta(fruta);
 						System.out.println("---");
 					}
+
 				}
 
 				case 3 -> {
@@ -57,6 +57,7 @@ public class Prateleira {
 							Fruta.setContador(Fruta.getContador() - 1);
 							break;
 						}
+
 					}
 
 					if (removido) {
@@ -65,6 +66,7 @@ public class Prateleira {
 					} else {
 						atendente.mensagemNaoEncontradoFruta();
 					}
+
 				}
 
 				case 4 -> {
@@ -94,13 +96,20 @@ public class Prateleira {
 				case 0 -> {
 					break;
 				}
+
+				default -> {
+					atendente.mensagemForaDosLimites();
 				}
+
+				}
+
 			} while (opcaoFruta != 0);
+
 		}
 
 		case 2 -> {
 			int opcaoVerdura = 1;
-			
+
 			do {
 				opcaoVerdura = atendente.menuPrincipalVerduras();
 
@@ -124,6 +133,7 @@ public class Prateleira {
 						atendente.visualizarVerdura(verdura);
 						System.out.println("---");
 					}
+
 				}
 
 				case 3 -> {
@@ -137,6 +147,7 @@ public class Prateleira {
 							Verdura.setContador(Verdura.getContador() - 1);
 							break;
 						}
+
 					}
 
 					if (removido) {
@@ -145,6 +156,7 @@ public class Prateleira {
 					} else {
 						atendente.mensagemNaoEncontradoVerdura();
 					}
+
 				}
 
 				case 4 -> {
@@ -165,6 +177,7 @@ public class Prateleira {
 					} else {
 						atendente.mensagemNaoEncontradoVerdura();
 					}
+
 				}
 
 				case 5 -> {
@@ -175,16 +188,26 @@ public class Prateleira {
 					break;
 				}
 
+				default -> {
+					atendente.mensagemForaDosLimites();
 				}
+
+				}
+
 			} while (opcaoVerdura != 0);
+
 		}
-		
+
 		case 3 -> {
 			Atendente.visualizarQuantidade();
 		}
-		
-		case 28625 ->{
-			atendente.creditos();  // "Easter Egg" (Créditos)
+
+		case 28625 -> {
+			atendente.creditos(); // "Easter Egg" (Créditos)
+		}
+
+		default -> {
+			atendente.mensagemForaDosLimites();
 		}
 
 		}

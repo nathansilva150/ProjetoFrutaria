@@ -28,7 +28,7 @@ public class Atendente {
 		leia.nextLine();
 		return opcao;
 	}
-	
+
 	public int menuPrincipalFrutas() {
 		System.out.println("\n╔══════════════════════════════════════════╗");
 		System.out.println("║                MENU FRUTA                ║");
@@ -45,7 +45,7 @@ public class Atendente {
 		leia.nextLine();
 		return opcao;
 	}
-	
+
 	public int menuPrincipalVerduras() {
 		System.out.println("\n╔══════════════════════════════════════════╗");
 		System.out.println("║               MENU VERDURA               ║");
@@ -79,20 +79,20 @@ public class Atendente {
 		System.out.print("Digite a quantidade: ");
 		return leia.nextInt();
 	}
-	
+
 	public double frutaPeso() {
 		System.out.print("Digite o peso da fruta: ");
 		return leia.nextDouble();
 	}
-	
+
 	public void visualizarFruta(Fruta fruta) {
 		System.out.println("---");
 		System.out.println("Nome: " + fruta.getNome());
 		System.out.println("Preco: " + fruta.getPreco());
 		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Peso: " + fruta.getPeso());
+		System.out.println("Peso em gramas: " + fruta.getPeso() + " g");
 	}
-	
+
 	public String frutaRemover() {
 		System.out.print("Digite o nome da fruta que deseja remover: ");
 		return leia.nextLine();
@@ -101,7 +101,7 @@ public class Atendente {
 	public void visualizarFrutaRemovida(String nome) {
 		System.out.println("A fruta '" + nome + "' foi removida.");
 	}
-	
+
 	public String frutaBuscar() {
 		System.out.print("Digite o nome da fruta que deseja encontrar: ");
 		return leia.nextLine();
@@ -112,7 +112,7 @@ public class Atendente {
 		System.out.println("Nome: " + fruta.getNome());
 		System.out.println("Preco: R$ " + fruta.getPreco());
 		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Peso: " + fruta.getPeso());
+		System.out.println("Peso em gramas: " + fruta.getPeso() + " g");
 	}
 
 	public static void visualizarQuantidadeFrutas() {
@@ -129,29 +129,29 @@ public class Atendente {
 	public void mensagemNaoEncontradoFruta() {
 		System.out.println("Fruta não encontrada!!!");
 	}
-	
+
 	// VERDURAS
 
 	public String verduraNome() {
 		System.out.print("Digite o nome da verdura: ");
 		return leia.nextLine();
 	}
-	
+
 	public double verduraPreco() {
 		System.out.print("Digite um preco para a verdura: ");
 		return leia.nextDouble();
 	}
-	
+
 	public int verduraQuantidade() {
 		System.out.print("Digite a quantidade: ");
 		return leia.nextInt();
 	}
-	
+
 	public String verduraTipo() {
 		System.out.print("Digite o tipo da verdura: ");
 		return leia.nextLine();
 	}
-	
+
 	public void visualizarVerdura(Verdura verdura) {
 		System.out.println("---");
 		System.out.println("Nome: " + verdura.getNome());
@@ -159,21 +159,21 @@ public class Atendente {
 		System.out.println("Quantidade: " + verdura.getQuantidade());
 		System.out.println("Tipo: " + verdura.getTipo());
 	}
-	
+
 	public String verduraRemover() {
 		System.out.print("Digite o nome da verdura que deseja remover: ");
 		return leia.nextLine();
 	}
-	
+
 	public void visualizarVerduraRemovida(String nome) {
 		System.out.println("A verdura '" + nome + "' foi removida.");
 	}
-	
+
 	public String verduraBuscar() {
 		System.out.print("Digite o nome da verdura que deseja encontrar: ");
 		return leia.nextLine();
 	}
-	
+
 	public void visualizarVerduraBuscada(String modeloBusca, Verdura verdura) {
 		System.out.println("\nResultado da sua pesquisa: '" + modeloBusca + "': ");
 		System.out.println("Nome: " + verdura.getNome());
@@ -181,20 +181,22 @@ public class Atendente {
 		System.out.println("Quantidade: " + verdura.getQuantidade());
 		System.out.println("Tipo: " + verdura.getTipo());
 	}
-	
+
 	public static void visualizarQuantidadeVerduras() {
-		
+
 		if (Verdura.getContadorVerdura() == 0) {
-			System.out.println("Existe " + Verdura.getContadorVerdura() + " verduras registradas no sistema! Sistema vazio!");
+			System.out.println(
+					"Existe " + Verdura.getContadorVerdura() + " verduras registradas no sistema! Sistema vazio!");
 		} else if (Verdura.getContadorVerdura() == 1) {
 			System.out.println("Existe " + Verdura.getContadorVerdura() + " verdura registrada no sistema!");
 		} else {
-			System.out.println("\nExistem " + Verdura.getContadorVerdura() + " verduras diferentes registradas no sistema!");
+			System.out.println(
+					"\nExistem " + Verdura.getContadorVerdura() + " verduras diferentes registradas no sistema!");
 		}
 	}
-	
-public static void visualizarQuantidade() {
-		
+
+	public static void visualizarQuantidade() {
+
 		if (Produto.getContador() == 0) {
 			System.out.println("Existe " + Produto.getContador() + " produtos registradas no sistema! Sistema vazio!");
 		} else if (Produto.getContador() == 1) {
@@ -203,38 +205,46 @@ public static void visualizarQuantidade() {
 			System.out.println("\nExistem " + Produto.getContador() + " produtos diferentes registrados no sistema!");
 		}
 	}
-	
+
 	public void creditos() {
-			System.out.println("\n=====================| Créditos |========================");
-			System.out.println("|                                                       |");
-			System.out.println("|    Código desenvolvido por Nathan Batista da Silva    |");
-			System.out.println("|                                                       |");
-			System.out.println("|       Feito usando o material desenvolvido por:       |");
-			System.out.println("|                 Bruno da Silva Andrade                |");
-			System.out.println("|                                                       |");
-			System.out.println("|                 Agradecimentos finais                 |");
-			System.out.println("|                 ---------------------                 |");
-			System.out.println("|         A Deus, pois a ele sempre serei grato         |");
-			System.out.println("|         Aos meus colegas de classe pela ajuda         |");
-			System.out.println("|         Ao meu pai e minha mãe pelo incentivo         |");
-			System.out.println("|      À Kamili pelo suporte e os primeiros testes      |");
-			System.out.println("|                                                       |");
-			System.out.println("|     E a você, pessoa que está usando este código!     |");
-			System.out.println("|                 ---------------------                 |");
-			System.out.println("|                                                       |");
-			System.out.println("|               My GitHub: nathansilva150               |");
-			System.out.println("|                                                       |");
-			System.out.println("|                    Até a próxima!!                    |");
-			System.out.println("|                                                       |");
-			System.out.println("=========================================================");
-			System.out.println("\nVoltando ao menu...\n");
-		
+		System.out.println("\n╔═══════════════════════════════════════════════════════╗");
+		System.out.println("║                       Créditos:                       ║");
+		System.out.println("╠═══════════════════════════════════════════════════════╣");
+		System.out.println("║                                                       ║");
+		System.out.println("║    Código desenvolvido por Nathan Batista da Silva    ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║       Feito usando o material desenvolvido por:       ║");
+		System.out.println("║                 Bruno da Silva Andrade                ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║                 Agradecimentos finais                 ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║                 ---------------------                 ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║         A Deus, pois a ele sempre serei grato         ║");
+		System.out.println("║         Aos meus colegas de classe pela ajuda         ║");
+		System.out.println("║         Ao meu pai e minha mãe pelo incentivo         ║");
+		System.out.println("║      À Kamili pelo suporte e os primeiros testes      ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║     E a você, pessoa que está usando este código!     ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║                 ---------------------                 ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║           Visite meu GitHub: nathansilva150           ║");
+		System.out.println("║                                                       ║");
+		System.out.println("║                    Até a próxima!!                    ║");
+		System.out.println("║                                                       ║");
+		System.out.println("╚═══════════════════════════════════════════════════════╝");
+		System.out.println("\nVoltando ao menu...\n");
+	}
+	
+	public void mensagemForaDosLimites() {
+		System.out.println("O valor informado é inválido! Voltando ao menu.");
 	}
 
 	public void mensagemNaoEncontradoVerdura() {
 		System.out.println("Verdura não encontrada!!!");
 	}
-	
+
 	public void limparScanner() {
 		leia.nextLine();
 	}
