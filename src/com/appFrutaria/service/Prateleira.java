@@ -1,10 +1,12 @@
-package service;
+package com.appFrutaria.service;
 
 import java.util.List;
+
+import com.appFrutaria.model.Fruta;
+import com.appFrutaria.model.Verdura;
+import com.appFrutaria.view.Atendente;
+
 import java.util.ArrayList;
-import model.Fruta;
-import model.Verdura;
-import view.Atendente;
 
 public class Prateleira {
 	List<Fruta> listaFruta;

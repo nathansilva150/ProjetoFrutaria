@@ -1,4 +1,4 @@
-package model;
+package com.appFrutaria.model;
 
 public class Produto {
 

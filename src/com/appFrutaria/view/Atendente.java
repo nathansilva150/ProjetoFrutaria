@@ -1,9 +1,10 @@
-package view;
+package com.appFrutaria.view;
 
 import java.util.Scanner;
-import model.Fruta;
-import model.Verdura;
-import model.Produto;
+
+import com.appFrutaria.model.Fruta;
+import com.appFrutaria.model.Produto;
+import com.appFrutaria.model.Verdura;
 
 public class Atendente {
 
@@ -14,12 +15,14 @@ public class Atendente {
 	}
 
 	public int menuPrincipal() {
-		System.out.println("\n=============< App Frutaria >=============");
-		System.out.println("| 1 - Cadastrar uma fruta                |");
-		System.out.println("| 2 - Cadastrar uma verdura              |");
-		System.out.println("| 3 - Listar quantidade total em estoque |");
-		System.out.println("| 0 - Sair do programa                   |");
-		System.out.println("==========================================");
+		System.out.println("\n╔══════════════════════════════════════════╗");
+		System.out.println("║              MENU PRINCIPAL              ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Cadastrar uma fruta                 ║");
+		System.out.println("║ 2 -> Cadastrar uma verdura               ║");
+		System.out.println("║ 3 -> Listar quantidade total em estoque  ║");
+		System.out.println("║ 0 -> Sair do programa                    ║");
+		System.out.println("╚══════════════════════════════════════════╝");
 		System.out.print("Digite uma opção: ");
 		int opcao = leia.nextInt();
 		leia.nextLine();
@@ -27,14 +30,16 @@ public class Atendente {
 	}
 	
 	public int menuPrincipalFrutas() {
-		System.out.println("\n================< Frutas >================");
-		System.out.println("| 1 - Cadastrar uma fruta                |");
-		System.out.println("| 2 - Listar frutas                      |");
-		System.out.println("| 3 - Remover fruta                      |");
-		System.out.println("| 4 - Buscar fruta                       |");
-		System.out.println("| 5 - Quantidade de frutas registradas   |");
-		System.out.println("| 0 - Voltar ao menu principal           |");
-		System.out.println("==========================================");
+		System.out.println("\n╔══════════════════════════════════════════╗");
+		System.out.println("║                MENU FRUTA                ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Cadastrar uma fruta                 ║");
+		System.out.println("║ 2 -> Listar frutas                       ║");
+		System.out.println("║ 3 -> Remover fruta                       ║");
+		System.out.println("║ 4 -> Buscar fruta                        ║");
+		System.out.println("║ 5 -> Quantidade de frutas registradas    ║");
+		System.out.println("║ 0 -> Voltar ao menu principal            ║");
+		System.out.println("╚══════════════════════════════════════════╝");
 		System.out.print("Digite uma opção: ");
 		int opcao = leia.nextInt();
 		leia.nextLine();
@@ -42,14 +47,16 @@ public class Atendente {
 	}
 	
 	public int menuPrincipalVerduras() {
-		System.out.println("\n===============< Verduras >===============");
-		System.out.println("| 1 - Cadastrar uma verdura              |");
-		System.out.println("| 2 - Listar verduras                    |");
-		System.out.println("| 3 - Remover verdura                    |");
-		System.out.println("| 4 - Buscar verdura                     |");
-		System.out.println("| 5 - Quantidade de verduras registradas |");
-		System.out.println("| 0 - Voltar ao menu principal           |");
-		System.out.println("==========================================");
+		System.out.println("\n╔══════════════════════════════════════════╗");
+		System.out.println("║               MENU VERDURA               ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Cadastrar uma verdura               ║");
+		System.out.println("║ 2 -> Listar verduras                     ║");
+		System.out.println("║ 3 -> Remover verdura                     ║");
+		System.out.println("║ 4 -> Buscar verdura                      ║");
+		System.out.println("║ 5 -> Quantidade de verduras registradas  ║");
+		System.out.println("║ 0 -> Voltar ao menu principal            ║");
+		System.out.println("╚══════════════════════════════════════════╝");
 		System.out.print("Digite uma opção: ");
 		int opcao = leia.nextInt();
 		leia.nextLine();

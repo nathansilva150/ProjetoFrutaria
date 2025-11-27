@@ -1,7 +1,7 @@
-package main;
+package com.appFrutaria.main;
 
-import view.Atendente;
-import service.Prateleira;
+import com.appFrutaria.service.Prateleira;
+import com.appFrutaria.view.Atendente;
 
 public class Main {
 	public static void main(String[] args) {
