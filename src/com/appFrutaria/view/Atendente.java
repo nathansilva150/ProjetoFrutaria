@@ -198,9 +198,9 @@ public class Atendente {
 	public static void visualizarQuantidade() {
 
 		if (Produto.getContador() == 0) {
-			System.out.println("Existe " + Produto.getContador() + " produtos registradas no sistema! Sistema vazio!");
+			System.out.println("Existe " + Produto.getContador() + " produtos registrados no sistema! Sistema vazio!");
 		} else if (Produto.getContador() == 1) {
-			System.out.println("Existe " + Produto.getContador() + " produtos registrada no sistema!");
+			System.out.println("Existe " + Produto.getContador() + " produto registrado no sistema!");
 		} else {
 			System.out.println("\nExistem " + Produto.getContador() + " produtos diferentes registrados no sistema!");
 		}
@@ -238,15 +238,6 @@ public class Atendente {
 	}
 
 	// EASTER EGG DO GUGU 🖤
-	public void guguLiberato1() {
-		System.out.println("╔═══════════════════════════════════════════════════════════╗");
-		for (int i = 0; i < 1000; i++) {
-			System.out.println("║  Olá! Eu estou falando com o Gan ou com o Gugu Liberato?  ║");
-		}
-		System.out.println("╚═══════════════════════════════════════════════════════════╝");
-		System.out.println("\n   💥      💥  💥  💥 💥💥 Cabum 💥💥 💥  💥  💥      💥  ");
-		System.exit(0);
-	}
 	
 	public void guguLiberato() {
 		System.out.println("╔═══════════════════════════════════════════════════════════╗");
