@@ -236,7 +236,28 @@ public class Atendente {
 		System.out.println("╚═══════════════════════════════════════════════════════╝");
 		System.out.println("\nVoltando ao menu...\n");
 	}
+
+	// EASTER EGG DO GUGU 🖤
+	public void guguLiberato1() {
+		System.out.println("╔═══════════════════════════════════════════════════════════╗");
+		for (int i = 0; i < 1000; i++) {
+			System.out.println("║  Olá! Eu estou falando com o Gan ou com o Gugu Liberato?  ║");
+		}
+		System.out.println("╚═══════════════════════════════════════════════════════════╝");
+		System.out.println("\n   💥      💥  💥  💥 💥💥 Cabum 💥💥 💥  💥  💥      💥  ");
+		System.exit(0);
+	}
 	
+	public void guguLiberato() {
+		System.out.println("╔═══════════════════════════════════════════════════════════╗");
+		for (int i = 0; i < 1000; i++) {
+			System.out.println("║  Olá! Eu estou falando com o Gan ou com o Gugu Liberato?  ║");
+		}
+		System.out.println("╚═══════════════════════════════════════════════════════════╝");
+		System.out.println("\n   💥      💥  💥  💥 💥💥 Cabum 💥💥 💥  💥  💥      💥  ");
+		System.exit(0);
+	}
+
 	public void mensagemForaDosLimites() {
 		System.out.println("O valor informado é inválido! Voltando ao menu.");
 	}
@@ -248,7 +269,7 @@ public class Atendente {
 	public void limparScanner() {
 		leia.nextLine();
 	}
-
+	
 	public void finalizarApp() {
 		System.out.println("Sistema encerrado!");
 	}

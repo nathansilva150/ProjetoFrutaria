@@ -201,7 +201,11 @@ public class Prateleira {
 		case 3 -> {
 			Atendente.visualizarQuantidade();
 		}
-
+		
+		case 2019 -> {
+			atendente.guguLiberato();
+		}
+		
 		case 28625 -> {
 			atendente.creditos(); // "Easter Egg" (Créditos)
 		}
