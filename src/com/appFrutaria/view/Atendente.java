@@ -19,42 +19,18 @@ public class Atendente {
 		System.out.println("║              MENU PRINCIPAL              ║");
 		System.out.println("╠══════════════════════════════════════════╣");
 		System.out.println("║ 1 -> Cadastrar uma fruta                 ║");
-		System.out.println("║ 2 -> Cadastrar uma verdura               ║");
-		System.out.println("║ 3 -> Listar quantidade total em estoque  ║");
-		System.out.println("║ 0 -> Sair do programa                    ║");
-		System.out.println("╚══════════════════════════════════════════╝");
-		System.out.print("Digite uma opção: ");
-		int opcao = leia.nextInt();
-		leia.nextLine();
-		return opcao;
-	}
-
-	public int menuPrincipalFrutas() {
-		System.out.println("\n╔══════════════════════════════════════════╗");
-		System.out.println("║                MENU FRUTA                ║");
-		System.out.println("╠══════════════════════════════════════════╣");
-		System.out.println("║ 1 -> Cadastrar uma fruta                 ║");
 		System.out.println("║ 2 -> Listar frutas                       ║");
 		System.out.println("║ 3 -> Remover fruta                       ║");
 		System.out.println("║ 4 -> Buscar fruta                        ║");
 		System.out.println("║ 5 -> Quantidade de frutas registradas    ║");
-		System.out.println("║ 0 -> Voltar ao menu principal            ║");
-		System.out.println("╚══════════════════════════════════════════╝");
-		System.out.print("Digite uma opção: ");
-		int opcao = leia.nextInt();
-		leia.nextLine();
-		return opcao;
-	}
-
-	public int menuPrincipalVerduras() {
-		System.out.println("\n╔══════════════════════════════════════════╗");
-		System.out.println("║               MENU VERDURA               ║");
 		System.out.println("╠══════════════════════════════════════════╣");
-		System.out.println("║ 1 -> Cadastrar uma verdura               ║");
-		System.out.println("║ 2 -> Listar verduras                     ║");
-		System.out.println("║ 3 -> Remover verdura                     ║");
-		System.out.println("║ 4 -> Buscar verdura                      ║");
-		System.out.println("║ 5 -> Quantidade de verduras registradas  ║");
+		System.out.println("║ 6 -> Cadastrar uma verdura               ║");
+		System.out.println("║ 7 -> Listar verduras                     ║");
+		System.out.println("║ 8 -> Remover verdura                     ║");
+		System.out.println("║ 9 -> Buscar verdura                      ║");
+		System.out.println("║ 10 -> Quantidade de verduras registradas ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 11 -> Quantidade total de produtos       ║");
 		System.out.println("║ 0 -> Voltar ao menu principal            ║");
 		System.out.println("╚══════════════════════════════════════════╝");
 		System.out.print("Digite uma opção: ");
@@ -264,6 +240,10 @@ public class Atendente {
 
 	public void mensagemNaoEncontradoVerdura() {
 		System.out.println("Verdura não encontrada!!!");
+	}
+	
+	public void mensagemListaVazia() {
+		System.out.println("Lista vazia! Insira algo...");
 	}
 
 	public void limparScanner() {
