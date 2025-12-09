@@ -34,7 +34,7 @@ public class Prateleira {
 					atendente.dadosInvalidos();
 					break;
 				} else {
-					Fruta frutas = new Fruta(nome, preco, quantidade, peso, id);
+					Produto frutas = new Fruta(nome, preco, quantidade, peso, id);
 					listaProduto.add(frutas);
 					System.out.println("\nFruta registrada no sistema!");
 				}
@@ -51,7 +51,7 @@ public class Prateleira {
 					atendente.dadosInvalidos();
 					break;
 				} else {
-					Verdura verdura = new Verdura(nome, preco, quantidade, tipo, id);
+					Produto verdura = new Verdura(nome, preco, quantidade, tipo, id);
 					listaProduto.add(verdura);
 					System.out.println("\nVerdura registrada no sistema!");
 				}
@@ -170,11 +170,11 @@ public class Prateleira {
 				int id = atendente.produtoBuscar();
 				atendente.limparScanner();
 				boolean buscado = false;
-				Fruta frutaEncontrada = null;
+				Produto frutaEncontrada = null;
 
 				for (Produto p : listaProduto) {
 					if (p instanceof Fruta && p.getId() == id) {
-						frutaEncontrada = (Fruta) p;
+						frutaEncontrada = p;
 						buscado = true;
 						break;
 					}
@@ -189,11 +189,11 @@ public class Prateleira {
 			case 2 -> {
 				int id = atendente.produtoBuscar();
 				boolean buscado = false;
-				Verdura verduraEncontrada = null;
+				Produto verduraEncontrada = null;
 
 				for (Produto p : listaProduto) {
 					if (p instanceof Verdura && p.getId() == id) {
-						verduraEncontrada = (Verdura) p;
+						verduraEncontrada = p;
 						buscado = true;
 						break;
 					}

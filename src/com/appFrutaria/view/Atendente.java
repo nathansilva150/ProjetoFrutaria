@@ -111,6 +111,11 @@ public class Atendente {
 		leia.nextLine();
 		return opcao;
 	}
+	
+	public void visualizarProduto(Produto produto) {
+		System.out.println("---");
+		System.out.println(produto);
+	}
 
 	// FRUTAS
 
@@ -132,11 +137,6 @@ public class Atendente {
 	public double frutaPeso() {
 		System.out.print("Digite o peso da fruta: ");
 		return leia.nextDouble();
-	}
-
-	public void visualizarProduto(Produto produto) {
-		System.out.println("---");
-		System.out.println(produto);
 	}
 
 	public String frutaRemover() {
