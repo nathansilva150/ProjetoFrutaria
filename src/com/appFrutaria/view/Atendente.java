@@ -13,25 +13,98 @@ public class Atendente {
 	public Atendente() {
 		leia = new Scanner(System.in);
 	}
+	
+	// MENUS
 
 	public int menuPrincipal() {
 		System.out.println("\n╔═══════════════════════════════════════════╗");
 		System.out.println("║              MENU PRINCIPAL               ║");
 		System.out.println("╠═══════════════════════════════════════════╣");
-		System.out.println("║ 1 --> Cadastrar uma fruta                 ║");
-		System.out.println("║ 2 --> Listar frutas                       ║");
-		System.out.println("║ 3 --> Remover fruta                       ║");
-		System.out.println("║ 4 --> Buscar fruta                        ║");
-		System.out.println("║ 5 --> Quantidade de frutas registradas    ║");
+		System.out.println("║ 1 -> Cadastrar um produto                 ║");
+		System.out.println("║ 2 -> Listar produtos                      ║");
+		System.out.println("║ 3 -> Remover produto                      ║");
+		System.out.println("║ 4 -> Buscar produto                       ║");
+		System.out.println("║ 5 -> Quantidade total de produtos         ║");
+		System.out.println("║ 0 -> Encerrar sistema                     ║");
+		System.out.println("╚═══════════════════════════════════════════╝");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+
+	public int menuCadastro() {
+		System.out.println("\n╔═══════════════════════════════════════════╗");
+		System.out.println("║               MENU CADASTRO               ║");
 		System.out.println("╠═══════════════════════════════════════════╣");
-		System.out.println("║ 6 --> Cadastrar uma verdura               ║");
-		System.out.println("║ 7 --> Listar verduras                     ║");
-		System.out.println("║ 8 --> Remover verdura                     ║");
-		System.out.println("║ 9 --> Buscar verdura                      ║");
-		System.out.println("║ 10 -> Quantidade de verduras registradas  ║");
+		System.out.println("║ 1 -> Cadastrar fruta                      ║");
+		System.out.println("║ 2 -> Cadastrar verdura                    ║");
 		System.out.println("╠═══════════════════════════════════════════╣");
-		System.out.println("║ 11 -> Quantidade total de produtos        ║");
-		System.out.println("║ 0 --> Encerrar sistema                    ║");
+		System.out.println("║ 0 -> Cancelar cadastro                    ║");
+		System.out.println("╚═══════════════════════════════════════════╝");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+	
+	public int menuListagem() {
+		System.out.println("\n╔═══════════════════════════════════════════╗");
+		System.out.println("║               MENU LISTAGEM               ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Listar frutas em estoque             ║");
+		System.out.println("║ 2 -> Listar verduras em estoque           ║");
+		System.out.println("║ 3 -> Listar todos os produtos em estoque  ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ 0 -> Cancelar listagem                    ║");
+		System.out.println("╚═══════════════════════════════════════════╝");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+	
+	public int menuRemocao() {
+		System.out.println("\n╔══════════════════════════════════════════╗");
+		System.out.println("║               MENU REMOÇÃO               ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Remover uma fruta                   ║");
+		System.out.println("║ 2 -> Remover uma verdura                 ║");
+		System.out.println("╠══════════════════════════════════════════╣");
+		System.out.println("║ 0 -> Cancelar remoção                    ║");
+		System.out.println("╚══════════════════════════════════════════╝");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+	
+	public int menuBusca() {
+		System.out.println("\n╔═══════════════════════════════════════════╗");
+		System.out.println("║               MENU PESQUISA               ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ O que você quer pesquisar?                ║");
+		System.out.println("║ ----                                      ║");
+		System.out.println("║ 1 -> Uma frutas no estoque                ║");
+		System.out.println("║ 2 -> Uma verdura no estoque               ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ 0 -> Cancelar pesquisa                    ║");
+		System.out.println("╚═══════════════════════════════════════════╝");
+		System.out.print("Digite uma opção: ");
+		int opcao = leia.nextInt();
+		leia.nextLine();
+		return opcao;
+	}
+	
+	public int menuVisualizar() {
+		System.out.println("\n╔═══════════════════════════════════════════╗");
+		System.out.println("║             MENU VISUALIZAÇÃO             ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ 1 -> Visualizar frutas em estoque         ║");
+		System.out.println("║ 2 -> Visualizar verduras em estoque       ║");
+		System.out.println("║ 3 -> Visualizar todos os produtos         ║");
+		System.out.println("╠═══════════════════════════════════════════╣");
+		System.out.println("║ 0 -> Cancelar visualização                ║");
 		System.out.println("╚═══════════════════════════════════════════╝");
 		System.out.print("Digite uma opção: ");
 		int opcao = leia.nextInt();
@@ -237,3 +310,4 @@ public class Atendente {
 	}
 
 }
+
