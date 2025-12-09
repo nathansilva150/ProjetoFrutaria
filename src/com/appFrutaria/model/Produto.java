@@ -6,19 +6,24 @@ public class Produto {
 	protected double preco;
 	protected int quantidade;
 	protected static int contador = 0;
+	protected int id;
+	private static int contadorId = 0;
+	
 
 	public Produto() {
 		this.nome = "";
 		this.preco = 0;
 		this.quantidade = 0;
 		Produto.contador++;
+		this.id++;
 	}
 
-	public Produto(String nome, double preco, int quantidade) {
+	public Produto(String nome, double preco, int quantidade, int id) {
 		this.nome = nome;
 		this.preco = preco;
 		this.quantidade = quantidade;
 		Produto.contador++;
+		this.id = ++contadorId;
 	}
 
 	public void setNome(String nome) {
@@ -53,9 +58,14 @@ public class Produto {
 		return contador;
 	}
 	
+	public int getId() {
+		return id;
+	}
+	
 	@Override
 	public String toString() {
-		return "Produto: " + nome + " custa R$ " + preco + " e possui " + quantidade + "unidades em estoque.";
+		return "Produto: " + nome + "\nID: " + id + "\nPreço: R$ " + preco + "\nQuantidade: " + quantidade;
 	}
+
 	
 }

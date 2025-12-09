@@ -85,7 +85,7 @@ public class Atendente {
 		System.out.println("╠═══════════════════════════════════════════╣");
 		System.out.println("║ O que você quer pesquisar?                ║");
 		System.out.println("║ ----                                      ║");
-		System.out.println("║ 1 -> Uma frutas no estoque                ║");
+		System.out.println("║ 1 -> Uma fruta no estoque                 ║");
 		System.out.println("║ 2 -> Uma verdura no estoque               ║");
 		System.out.println("╠═══════════════════════════════════════════╣");
 		System.out.println("║ 0 -> Cancelar pesquisa                    ║");
@@ -134,12 +134,9 @@ public class Atendente {
 		return leia.nextDouble();
 	}
 
-	public void visualizarFruta(Fruta fruta) {
+	public void visualizarProduto(Produto produto) {
 		System.out.println("---");
-		System.out.println("Nome: " + fruta.getNome());
-		System.out.println("Preco: " + fruta.getPreco());
-		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Peso em gramas: " + fruta.getPeso() + " g");
+		System.out.println(produto);
 	}
 
 	public String frutaRemover() {
@@ -151,17 +148,14 @@ public class Atendente {
 		System.out.println("A fruta '" + nome + "' foi removida.");
 	}
 
-	public String frutaBuscar() {
-		System.out.print("Digite o nome da fruta que deseja encontrar: ");
-		return leia.nextLine();
+	public int produtoBuscar() {
+		System.out.print("Digite o id do produto que deseja encontrar: ");
+		return leia.nextInt();
 	}
 
-	public void visualizarFrutaBuscada(String modeloBusca, Fruta fruta) {
-		System.out.println("\nResultado da sua pesquisa: '" + modeloBusca + "': ");
-		System.out.println("Nome: " + fruta.getNome());
-		System.out.println("Preco: R$ " + fruta.getPreco());
-		System.out.println("Quantidade: " + fruta.getQuantidade());
-		System.out.println("Peso em gramas: " + fruta.getPeso() + " g");
+	public void visualizarProdutoBuscado(int id, Produto produto) {
+		System.out.println("\nResultado da sua pesquisa: '" + id + "': ");
+		System.out.println(produto);
 	}
 
 	public static void visualizarQuantidadeFrutas() {
@@ -201,14 +195,6 @@ public class Atendente {
 		return leia.nextLine();
 	}
 
-	public void visualizarVerdura(Verdura verdura) {
-		System.out.println("---");
-		System.out.println("Nome: " + verdura.getNome());
-		System.out.println("Preco: " + verdura.getPreco());
-		System.out.println("Quantidade: " + verdura.getQuantidade());
-		System.out.println("Tipo: " + verdura.getTipo());
-	}
-
 	public String verduraRemover() {
 		System.out.print("Digite o nome da verdura que deseja remover: ");
 		return leia.nextLine();
@@ -216,19 +202,6 @@ public class Atendente {
 
 	public void visualizarVerduraRemovida(String nome) {
 		System.out.println("A verdura '" + nome + "' foi removida.");
-	}
-
-	public String verduraBuscar() {
-		System.out.print("Digite o nome da verdura que deseja encontrar: ");
-		return leia.nextLine();
-	}
-
-	public void visualizarVerduraBuscada(String modeloBusca, Verdura verdura) {
-		System.out.println("\nResultado da sua pesquisa: '" + modeloBusca + "': ");
-		System.out.println("Nome: " + verdura.getNome());
-		System.out.println("Preco: R$ " + verdura.getPreco());
-		System.out.println("Quantidade: " + verdura.getQuantidade());
-		System.out.println("Tipo: " + verdura.getTipo());
 	}
 
 	public static void visualizarQuantidadeVerduras() {

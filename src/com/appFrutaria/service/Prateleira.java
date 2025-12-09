@@ -15,6 +15,8 @@ public class Prateleira {
 	}
 
 	public void gerenciarPrateleira(int opcao, Atendente atendente) {
+		Produto produto1 = new Produto();
+
 		switch (opcao) {
 		case 1 -> {
 			int opcaoCadastro = atendente.menuCadastro();
@@ -26,11 +28,13 @@ public class Prateleira {
 				int quantidade = atendente.frutaQuantidade();
 				double peso = atendente.frutaPeso();
 				atendente.limparScanner();
+				int id = produto1.getId();
+
 				if (preco < 0 || peso < 0 || quantidade < 0) {
 					atendente.dadosInvalidos();
 					break;
 				} else {
-					Fruta frutas = new Fruta(nome, preco, quantidade, peso);
+					Fruta frutas = new Fruta(nome, preco, quantidade, peso, id);
 					listaProduto.add(frutas);
 					System.out.println("\nFruta registrada no sistema!");
 				}
@@ -41,10 +45,16 @@ public class Prateleira {
 				int quantidade = atendente.verduraQuantidade();
 				atendente.limparScanner();
 				String tipo = atendente.verduraTipo();
+				int id = produto1.getId();
 
-				Verdura verdura = new Verdura(nome, preco, quantidade, tipo);
-				listaProduto.add(verdura);
-				System.out.println("\nVerdura registrada no sistema!");
+				if (preco < 0 || quantidade < 0) {
+					atendente.dadosInvalidos();
+					break;
+				} else {
+					Verdura verdura = new Verdura(nome, preco, quantidade, tipo, id);
+					listaProduto.add(verdura);
+					System.out.println("\nVerdura registrada no sistema!");
+				}
 			}
 			case 0 -> {
 				break;
@@ -63,7 +73,7 @@ public class Prateleira {
 					for (Produto f : listaProduto) {
 
 						if (f instanceof Fruta) {
-							atendente.visualizarFruta((Fruta) f);
+							atendente.visualizarProduto((Fruta) f);
 						}
 					}
 					System.out.println("---");
@@ -75,7 +85,7 @@ public class Prateleira {
 				} else {
 					for (Produto v : listaProduto) {
 						if (v instanceof Verdura) {
-							atendente.visualizarVerdura((Verdura) v);
+							atendente.visualizarProduto((Verdura) v);
 						}
 					}
 					System.out.println("---");
@@ -86,12 +96,7 @@ public class Prateleira {
 					atendente.mensagemListaVazia();
 				} else {
 					for (Produto produto : listaProduto) {
-						if (produto instanceof Fruta) {
-							atendente.visualizarFruta((Fruta) produto);
-						} else if (produto instanceof Verdura) {
-							atendente.visualizarVerdura((Verdura) produto);
-						}
-
+						atendente.visualizarProduto(produto);
 					}
 				}
 				System.out.println("---");
@@ -162,12 +167,13 @@ public class Prateleira {
 
 			switch (opcaoBusca) {
 			case 1 -> {
-				String nome = atendente.frutaBuscar();
+				int id = atendente.produtoBuscar();
+				atendente.limparScanner();
 				boolean buscado = false;
 				Fruta frutaEncontrada = null;
 
 				for (Produto p : listaProduto) {
-					if (p instanceof Fruta && p.getNome().equalsIgnoreCase(nome)) {
+					if (p instanceof Fruta && p.getId() == id) {
 						frutaEncontrada = (Fruta) p;
 						buscado = true;
 						break;
@@ -175,18 +181,18 @@ public class Prateleira {
 				}
 
 				if (buscado) {
-					atendente.visualizarFrutaBuscada(nome, frutaEncontrada);
+					atendente.visualizarProdutoBuscado(id, frutaEncontrada);
 				} else {
 					atendente.mensagemNaoEncontradoFruta();
 				}
 			}
 			case 2 -> {
-				String nome = atendente.verduraBuscar();
+				int id = atendente.produtoBuscar();
 				boolean buscado = false;
 				Verdura verduraEncontrada = null;
 
 				for (Produto p : listaProduto) {
-					if (p instanceof Verdura && p.getNome().equalsIgnoreCase(nome)) {
+					if (p instanceof Verdura && p.getId() == id) {
 						verduraEncontrada = (Verdura) p;
 						buscado = true;
 						break;
@@ -194,7 +200,7 @@ public class Prateleira {
 				}
 
 				if (buscado) {
-					atendente.visualizarVerduraBuscada(nome, verduraEncontrada);
+					atendente.visualizarProdutoBuscado(id, verduraEncontrada);
 				} else {
 					atendente.mensagemNaoEncontradoVerdura();
 				}
@@ -207,7 +213,7 @@ public class Prateleira {
 
 		case 5 -> {
 			int opcaoVisualizacao = atendente.menuVisualizar();
-			
+
 			switch (opcaoVisualizacao) {
 			case 1 -> {
 				Atendente.visualizarQuantidadeFrutas();

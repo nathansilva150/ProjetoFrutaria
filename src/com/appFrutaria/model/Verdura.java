@@ -5,14 +5,8 @@ public class Verdura extends Produto {
 	private String tipo;
 	private static int contadorVerdura;
 
-	public Verdura() {
-		super();
-		this.tipo = "";
-		Verdura.contadorVerdura++;
-	}
-
-	public Verdura(String nome, double preco, int quantidade, String tipo) {
-		super(nome, preco, quantidade);
+	public Verdura(String nome, double preco, int quantidade, String tipo, int id) {
+		super(nome, preco, quantidade, id);
 		this.tipo = tipo;
 		Verdura.contadorVerdura++;
 	}
@@ -32,10 +26,11 @@ public class Verdura extends Produto {
 	public static void setContadorVerdura(int contadorVerdura) {
 		Verdura.contadorVerdura = contadorVerdura;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Verdura: " + nome + " é do tipo " + tipo + ", custa R$ " + preco + " e possui " + quantidade + "unidades em estoque.";
+		return "Verdura: " + nome + "\nID: " + id + "\nPreço: R$ " + preco + "\nQuantidade: " + quantidade + "\nTipo: "
+				+ tipo;
 	}
 
 }
