@@ -32,5 +32,10 @@ public class Verdura extends Produto {
 	public static void setContadorVerdura(int contadorVerdura) {
 		Verdura.contadorVerdura = contadorVerdura;
 	}
+	
+	@Override
+	public String toString() {
+		return "Verdura: " + nome + " é do tipo " + tipo + ", custa R$ " + preco + " e possui " + quantidade + "unidades em estoque.";
+	}
 
 }

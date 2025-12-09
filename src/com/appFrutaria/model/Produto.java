@@ -53,4 +53,9 @@ public class Produto {
 		return contador;
 	}
 	
+	@Override
+	public String toString() {
+		return "Produto: " + nome + " custa R$ " + preco + " e possui " + quantidade + "unidades em estoque.";
+	}
+	
 }

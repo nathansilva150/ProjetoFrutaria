@@ -32,5 +32,10 @@ public class Fruta extends Produto {
 	public static void setContadorFruta(int contadorFruta) {
 		Fruta.contadorFruta = contadorFruta;
 	}
+	
+	@Override
+	public String toString() {
+		return "Verdura: " + nome + " pesa " + peso + " gramas, custa R$ " + preco + " e possui " + quantidade + "unidades em estoque.";
+	}
 
 }
