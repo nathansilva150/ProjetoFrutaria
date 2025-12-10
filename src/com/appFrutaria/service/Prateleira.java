@@ -111,50 +111,47 @@ public class Prateleira {
 
 			switch (opcaoRemocao) {
 			case 1 -> {
-				String nome = atendente.frutaRemover();
+				int id = atendente.produtoRemover();
 				boolean removido = false;
 
 				for (int indice = 0; indice < listaProduto.size(); indice++) {
-					if (listaProduto.get(indice) instanceof Fruta) {
-						if (listaProduto.get(indice).getNome().equalsIgnoreCase(nome)) {
-							listaProduto.remove(indice);
-							removido = true;
-							Fruta.setContadorFruta(Fruta.getContadorFruta() - 1);
-							Produto.setContador(Produto.getContador() - 1);
-							break;
-						}
+					if (listaProduto.get(indice).getId() == id && listaProduto.get(indice) instanceof Fruta) {
+						listaProduto.remove(indice);
+						removido = true;
+						Fruta.setContadorFruta(Fruta.getContadorFruta() - 1);
+						Produto.setContador(Produto.getContador() - 1);
+						break;
+
 					}
 
 				}
 
 				if (removido) {
-					atendente.visualizarFrutaRemovida(nome);
+					atendente.visualizarProdutoRemovido(id);
 
 				} else {
-					atendente.mensagemNaoEncontradoFruta();
+					atendente.mensagemNaoEncontradoProduto("Fruta");
 				}
 
 			}
 			case 2 -> {
-				String nome = atendente.verduraRemover();
+				int id = atendente.produtoRemover();
 				boolean removido = false;
 
 				for (int indice = 0; indice < listaProduto.size(); indice++) {
-					if (listaProduto.get(indice) instanceof Verdura) {
-						if (listaProduto.get(indice).getNome().equalsIgnoreCase(nome)) {
-							listaProduto.remove(indice);
-							removido = true;
-							Verdura.setContadorVerdura(Verdura.getContadorVerdura() - 1);
-							Produto.setContador(Produto.getContador() - 1);
-							break;
-						}
+					if (listaProduto.get(indice).getId() == id && listaProduto.get(indice) instanceof Verdura verdura) {
+						listaProduto.remove(indice);
+						removido = true;
+						Verdura.setContadorVerdura(Verdura.getContadorVerdura() - 1);
+						Produto.setContador(Produto.getContador() - 1);
+						break;
 					}
 				}
 
 				if (removido) {
-					atendente.visualizarVerduraRemovida(nome);
+					atendente.visualizarProdutoRemovido(id);
 				} else {
-					atendente.mensagemNaoEncontradoVerdura();
+					atendente.mensagemNaoEncontradoProduto("Verdura");
 				}
 			}
 			case 0 -> {
@@ -183,7 +180,7 @@ public class Prateleira {
 				if (buscado) {
 					atendente.visualizarProdutoBuscado(id, frutaEncontrada);
 				} else {
-					atendente.mensagemNaoEncontradoFruta();
+					atendente.mensagemNaoEncontradoProduto("Fruta");
 				}
 			}
 			case 2 -> {
@@ -202,7 +199,7 @@ public class Prateleira {
 				if (buscado) {
 					atendente.visualizarProdutoBuscado(id, verduraEncontrada);
 				} else {
-					atendente.mensagemNaoEncontradoVerdura();
+					atendente.mensagemNaoEncontradoProduto("Verdura");
 				}
 			}
 			case 0 -> {

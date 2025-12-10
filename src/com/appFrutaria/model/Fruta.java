@@ -18,7 +18,7 @@ public class Fruta extends Produto {
 
 	public double getPeso() {
 		return peso;
-	}
+	}	
 
 	public static int getContadorFruta() {
 		return contadorFruta;

@@ -139,13 +139,13 @@ public class Atendente {
 		return leia.nextDouble();
 	}
 
-	public String frutaRemover() {
-		System.out.print("Digite o nome da fruta que deseja remover: ");
-		return leia.nextLine();
+	public int produtoRemover() {
+		System.out.print("Digite o id do produto que deseja remover: ");
+		return leia.nextInt();
 	}
 
-	public void visualizarFrutaRemovida(String nome) {
-		System.out.println("A fruta '" + nome + "' foi removida.");
+	public void visualizarProdutoRemovido(int id) {
+		System.out.println("O produto com ID '" + id + "' foi removido.");
 	}
 
 	public int produtoBuscar() {
@@ -169,10 +169,6 @@ public class Atendente {
 		}
 	}
 
-	public void mensagemNaoEncontradoFruta() {
-		System.out.println("Fruta não encontrada!!!");
-	}
-
 	// VERDURAS
 
 	public String verduraNome() {
@@ -193,15 +189,6 @@ public class Atendente {
 	public String verduraTipo() {
 		System.out.print("Digite o tipo da verdura: ");
 		return leia.nextLine();
-	}
-
-	public String verduraRemover() {
-		System.out.print("Digite o nome da verdura que deseja remover: ");
-		return leia.nextLine();
-	}
-
-	public void visualizarVerduraRemovida(String nome) {
-		System.out.println("A verdura '" + nome + "' foi removida.");
 	}
 
 	public static void visualizarQuantidadeVerduras() {
@@ -262,16 +249,16 @@ public class Atendente {
 		System.out.println("O valor informado é inválido! Voltando ao menu.");
 	}
 
-	public void mensagemNaoEncontradoVerdura() {
-		System.out.println("Verdura não encontrada!!!");
-	}
-
 	public void dadosInvalidos() {
 		System.out.println("O valor informado é inválido!");
 	}
 
 	public void mensagemListaVazia() {
 		System.out.println("Lista vazia! Insira algo...");
+	}
+	
+	public void mensagemNaoEncontradoProduto(String produto) {
+		System.out.println(produto + " não encontrado(a)!");
 	}
 
 	public void limparScanner() {
